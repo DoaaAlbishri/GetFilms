@@ -31,10 +31,9 @@ class FilmsViewController: UITableViewController {
                         if let results = jsonResult["results"] {
                         // coercing the results object as an NSArray and then storing that in resultsArray
                             let resultsArray = results as! NSArray
-                            for person in resultsArray{
-                                let personDict = person as! NSDictionary
-                                self.films.append(personDict["title"]! as! String)
-                                
+                            for film in resultsArray{
+                                let filmDict = film as! NSDictionary
+                                self.films.append(filmDict["title"]! as! String)
                             }
                         }
                     }
